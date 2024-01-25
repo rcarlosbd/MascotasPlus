@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="title" content="Mascotas Plus | Bienestar para tus mascotas">
+    <meta name="description" content="Castraciones de Mascotas en Buenos Aires | Mascotas Plus Servicios Veterinarios | Especialistas en Perros y Gatos ¡Contáctanos para programar una cita!">
+    <meta name="keywords" content="servicios veterinarios, cuidado de mascotas, veterinario, castración, cirugía veterinaria, castraciones de perros, castraciones de gatos, atención veterinaria">
+    <meta name="author" content="Mascotas Plus">
+    <meta property="og:type" content="website">  
+    <meta property="og:title" content="Mascotas Plus | Bienestar para tus mascotas">
+    <meta property="og:description" content="Castraciones de Mascotas en Buenos Aires | Mascotas Plus Servicios Veterinarios | Especialistas en Perros y Gatos ¡Contáctanos para programar una cita!">
+    <meta property="og:image" content="URL de la imagen asociada al contenido">
+    <meta property="og:url" content="https:">
+    <meta name="twitter:title" content="Mascotas Plus | Bienestar para tus mascotas">
+    <meta name="twitter:description" content="Castraciones de Mascotas en Buenos Aires | Mascotas Plus Servicios Veterinarios | Especialistas en Perros y Gatos ¡Contáctanos para programar una cita!">
+    <meta name="twitter:image" content="https://">
+    <meta name="twitter:card" content="tipo de tarjeta (summary, summary_large_image, etc.)">
+     <meta name="theme-color" content="#ff8a00"> <!-- color a la cabezera en versión movil del sitio -->
+    <link rel="icon" href="../img/favicon-logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://kit.fontawesome.com/ebf0b391ae.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../style/styles.css" />
+    <title>Mascotas Plus</title>
+  </head>
+  <body>
+    <header>
+      <div class="container-nav">
+        <nav class="navbar">
+          <a href="/index.html"
+            ><img src="../img/logo.png" alt="logo" class="brand"
+          /></a>
+          <ul class="nav-links">
+            <li><a href="../page/turnos.html">Turnos</a></li>
+            <li><a href="../page/tarifas.html">Tarifas</a></li>
+            <li><a href="../page/nosotros.html">Nosotros</a></li>           
+            <li><a href="../page/preguntas.html">Preguntas(FAQ)</a></li>
+          </ul>
+        </nav>        
+        <button
+          id="menu-toggle"
+          class="button-menu-toggle"
+          aria-expanded="false"
+          aria-controls="navbar-collapse"
+        >
+          <span class="menu-toggle-icon"></span>
+          <span class="menu-toggle-icon"></span>
+          <span class="menu-toggle-icon"></span>
+        </button>
+      </div>        
+    </header>
+    <main class="full-grid-screen">
+      <section class="main-content main-content-center">
+      <h2 class="section-title">Solicitud de Turnos</h2> 
+      <p class="text-info-obligatorio">Todos los campos son de caracter obligatorio</p>  
+
+      <h2>Datos del cliente</h2>
+
+      <form action="resumen.html" method="get" class="contact-form box-shadow-1" id="turnos-form" onsubmit="return validateForm()">
+
+        <!-- Prueba de input datos del cliente -->
+
+      <section class="grid-column">
+        <article class="user-name grid-column-large">
+          <div class="nombre-apellidos">
+           <label for="name" class="hoverable-label">Nombre y Apellidos</label>
+          <input type="text" name="name" id="name" class="form-user-input" required pattern="^^[A-Za-z\s#,.:ñÑ'áéíóúÁÉÍÓÚ]{5,30}$" title="Ejemplo: Juan Pérez" required> 
+          </div>
+          <div class="span-name">
+            <span class="error-message">Solo letras. Ejemplo: <i>(Juan Pérez)</i></span>
+          </div>    
+        </article>
+
+        <article class="user-tel grid-column-short-5c">
+          <div class="telefono">
+          <label for="tel" class="hoverable-label">Teléfono</label>
+          <input type="tel" name="tel" id="tel" class="form-user-input" inputmode="numeric" pattern="[0-9]{10}" title="Ejemplo: 1154368956" required> 
+          </div>
+          <div class="span-telephone">
+          <span class="error-message">Solo 10 números sin espacios,.:;-/*()</i></span>
+          </div>    
+        </article>
+
+        <article class="user-email grid-column-medium">
+          <div class="correo">            
+            <label for="email" class="hoverable-label">E-mail</label>
+            <input type="email" name="email" id="email" class="form-user-input" pattern="\S+@\S+\.\S{2,}" title="Ejemplo: usuario@gmail.com" required>
+          </div> 
+          <div class="span-email">
+            <span class="error-message">Ejemplo: <i>(usuario@gmail.com)</i></span>                           
+          </div>          
+        </article>       
+
+        <article class="user-address grid-column-medium">
+          <div class="direccion">
+            <label for="address" class="hoverable-label" >Dirección particular</label>
+            <input type="text" name="address" id="address"   class="form-user-input" pattern=".{15,}" title="Ingrese una dirección con al menos 15 caracteres. Ejemplo: Calle 123, Altura 456" required>
+          </div>
+          <div class="span-address">
+            <span class="error-message"> Ejemplo: <i>(Calle # 123, entre-calles, Localidad)</i></span>
+          </div>
+        </article>
+
+        <article class="user-code grid-column-short-5c">
+          <div class="codigo-postal">
+            <label for="codigoPostal" class="hoverable-label">Código Postal</label>
+            <input type="number" name="codigoPostal" id="codigoPostal" min="1000" max="9999" maxlength="4" title="Ejemplo: 1431" required>
+          </div>
+          <div class="span-code">
+            <span class="error-message"> Ejemplo: <i>Máximo 4 dígitos(1431)</i></span>
+          </div>
+        </article>
+      </section>   
+
+      <!-- Botones de selección de mascota -->
+
+      <h2>Datos del la mascota</h2>
+
+        <article class="grid-column-form">
+
+          <div class="form-content ">
+            <div class="form-button">
+              <label for="caninoCantidad" class="hoverable-label">Canino </label> 
+            <select name="caninoCantidad" id="caninoCantidad" value="0" class="pet-select" required>
+              <option value="0">Seleccione</option> 
+              <option value="canino-item-0">0</option>                    
+              <option value="canino-item-1">1</option>
+              <option value="canino-item-2">2</option>   
+              <option value="canino-item-3">3</option>   
+              <option value="canino-item-4">4</option>   
+              <option value="canino-item-5">5</option>   
+              <option value="canino-item-6">6</option>   
+              <option value="canino-item-7">7</option>
+              <option value="canino-item-8">8</option>
+              <option value="canino-item-9">9</option>   
+              <option value="canino-item-10">10</option>   
+            </select>
+            </div>    
+          </div>
+
+          <div class="form-content ">
+            <div class="form-button">
+              <label for="felinoCantidad" class="hoverable-label">Felino </label> 
+            <select name="felinoCantidad" id="felinoCantidad" value="0" class="pet-select" required>
+              <option value="0">Seleccione</option> 
+              <option value="felino-item-0">0</option>                    
+              <option value="felino-item-1">1</option>              
+              <option value="felino-item-2">2</option>   
+              <option value="felino-item-3">3</option>   
+              <option value="felino-item-4">4</option>   
+              <option value="felino-item-5">5</option>   
+              <option value="felino-item-6">6</option>   
+              <option value="felino-item-7">7</option>
+              <option value="felino-item-8">8</option>
+              <option value="felino-item-9">9</option>   
+              <option value="felino-item-10">10</option>   
+            </select>
+            </div>    
+          </div>  
+    
+          <div class="form-content ">
+            <div class="form-button">
+            <label for="weight" class="hoverable-label" id="weight-label">Peso (kg)</label>
+            <select name="weight" id="weight-pet" class="pet-select" required>
+              <option value="0">Seleccione</option>                     
+              <option value="weight-item-1">3 a 10kg</option>                         
+            </select>
+            </div>    
+          </div>
+  
+          <div class="form-content">
+            <div class="form-button">
+            <label for="age" class="hoverable-label" id="age-label">Edad</label>
+            <select name="age" id="age-pet" class="pet-select" required>
+                <option value="0">Seleccione</option>                    
+                <option value="age-item-1">6 meses/6 años</option>            
+            </select>
+            </div>
+          </div>   
+  
+          <div class="form-content form-content-location ">
+            <div class="form-button">
+            <label for="location" class="hoverable-label" id="location-label">Localidad</label>
+            <select name="location" id="location-pet" class="pet-select" required>
+              <option value="0">Seleccione</option> <option value="1">Agronomía</option> <option value="2">Aldo Bonzi </option> <option value="3">Almagro</option> <option value="4">Balvanera</option> <option value="5">Barracas</option> <option value="6">Belgrano</option> <option value="7">Boedo</option> <option value="8">Caballito</option> <option value="9">Caseros </option> <option value="10">Castelar</option> <option value="11">Chacarita</option> <option value="12">Churruca</option> <option value="13">Ciudad Evita </option> <option value="14">Ciudad Jardín Lomas del Palomar</option> <option value="15">Ciudadela</option> <option value="16">Colegiales</option> <option value="17">Constitución</option> <option value="18">El Libertador</option> <option value="19">El Palomar</option> <option value="20">Flores</option> <option value="21">Floresta</option> <option value="22">Gregorio de Laferrere</option> <option value="23">Haedo</option> <option value="24">Isidro Casanova</option> <option value="25">José Ingenieros</option> <option value="26">La Boca</option> <option value="27">La Paternal</option> <option value="28">La Tablada</option> <option value="29">Liniers</option> <option  value="30">Loma Hermosa </option> <option value="31">Lomas del Mirador</option> <option value="32">Martín Coronado</option> <option value="33">Mataderos</option> <option value="34">Monserrat</option> <option value="35">Monte Castro</option> <option value="36">Núñez</option> <option value="37">Once de Septiembre </option> <option value="38">Pablo Podestá</option> <option value="39">Palermo</option> <option value="40">Parque Avellaneda</option> <option value="41">Parque Chacabuco</option> <option value="42">Parque Patricios</option> <option value="43">Pompeya</option> <option value="44">Puerto Madero</option> <option value="45">Rafael Castillo</option> <option value="46">Ramos Mejía</option> <option value="47">Recoleta</option> <option value="48">Remedios de Escalada</option> <option value="49">Retiro</option> <option value="50">Riachuelo</option> <option value="51">Saavedra</option> <option value="52">Sáenz Peña</option> <option value="53">San Justo</option> <option value="54">San Telmo</option> <option value="55">Santos Lugares</option> <option value="56">Tapiales</option> <option value="57">Velez Sarfield</option> <option value="59">Versalles</option> <option value="59">Villa Bosch</option> <option value="60">Villa del Parque</option> <option value="61">Villa Devoto</option> <option value="62">Villa Lugano</option> <option value="63">Villa Luro</option> <option value="64">Villa Luzuriaga</option> <option value="65">Villa Madero</option> <option value="66">Villa Mitre</option> <option value="67">Villa Ortuzar</option> <option value="68">Villa  Pueyrredón</option> <option value="69">Villa Raffo </option> <option value="70">Villa Real</option> <option value="71">Villa Sarmiento</option> <option value="72">Villa Soldati</option> <option value="73">Villa Urquiza</option>                 
+            </select>
+            </div>
+          </div>
+            
+          <div class="form-content form-content-date ">
+            <div class="form-button">
+            <label for="date" class="hoverable-label" id="date-label-2">Fechas disponibles</label>
+              <select name="date" id="date-available" class="pet-select" required>
+                <option value="0">Seleccione una fecha</option>                
+            </select>
+            </div>
+          </div>
+        </article>      
+
+        <div class="form-group-pregnant">
+          <label for="pregnant" class="hoverable-label-black">¿Cree que su mascota está gestante o pesa más de 10kg?</label>
+          <div class="form-group-pregnant-radio">
+            <input type="radio" name="pregnant" id="pregnant-yes" value="Si">
+          <label for="pregnant-yes">Si</label>
+          <input type="radio" name="pregnant" id="pregnant-no" value="No" checked>
+          <label for="pregnant-no">No</label>
+          </div>          
+        </div>
+      
+        <div id="modal" class="modal">
+          <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p>Si considera que su mascota está gestante o pesa más de 10kg, comuníquese con nosotros para orientarle cuales son los siguientes pasos.</p>
+            <div class="modal-link">
+              <a href="https://wa.me/5491122553332" target="_blank"><iconify-icon icon="logos:whatsapp-icon" style="color: var(--header-color);" width="30" height="30"></iconify-icon></a>
+              <a href="mailto:vetmascotasplus@gmail.com" target="_blank"><iconify-icon icon="heroicons-outline:mail" style="color: var(--header-color);" width="30" height="30"></iconify-icon></a>
+              <a href="https://wa.me/5491122553332" target="_blank"><iconify-icon icon="ph:phone-bold" style="color: var(--header-color);" width="30" height="30"></iconify-icon></a>              
+            </div>
+          </div>          
+        </div>
+
+        <div class="btn-form">
+          <a href="/index.html" class="btn-all btn-atras"><b>Atrás</b></a>         
+          <input type="submit" class="btn-all btn-continuar" name="continuar-pagar" id="submitBtn" value="Continuar y Pagar">      
+        </div>
+
+      </form>
+    </section>    
+    </main>
+    
+    <footer class="footer">  
+      <section class="footer-content">           
+        <div class="footer-social">
+          <h5>Contáctanos</h5>          
+          </div>
+        <div class="footer-social-link">
+          <a href="https://wa.me/5491122553332" target="_blank"><iconify-icon icon="logos:whatsapp-icon" style="color: #fcfcfc;" width="30" height="30"></iconify-icon></a>
+          <a href="mailto:vetmascotasplus@gmail.com" target="_blank"><iconify-icon icon="heroicons-outline:mail" style="color: #fcfcfc;" width="30" height="30"></iconify-icon></a>
+          <a href="https://wa.me/5491122553332" target="_blank"><iconify-icon icon="ph:phone-bold" style="color: #fcfcfc;" width="30" height="30"></iconify-icon></a>  
+        </div>
+        
+
+      </section>      
+        <div class="footer-copyright">
+          <p>Todos los derechos reservados &copy; 2023 Mascotas Plus</p>
+        </div>  
+    </footer>
+    <script src="../main_script/script.js"></script>
+    <script src="../main_script/turnos.js"></script>
+    <script src="../main_script/resumen.js"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+  </body>
+</html>

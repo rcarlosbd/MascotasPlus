@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="title" content="Mascotas Plus | Bienestar para tus mascotas">
+    <meta name="description" content="Castraciones de Mascotas en Buenos Aires | Mascotas Plus Servicios Veterinarios | Especialistas en Perros y Gatos ¡Contáctanos para programar una cita!">
+    <meta name="keywords" content="servicios veterinarios, cuidado de mascotas, veterinario, castración, cirugía veterinaria, castraciones de perros, castraciones de gatos, atención veterinaria">
+    <meta name="author" content="Mascotas Plus">
+    <meta property="og:type" content="website">  
+    <meta property="og:title" content="Mascotas Plus | Bienestar para tus mascotas">
+    <meta property="og:description" content="Castraciones de Mascotas en Buenos Aires | Mascotas Plus Servicios Veterinarios | Especialistas en Perros y Gatos ¡Contáctanos para programar una cita!">
+    <meta property="og:image" content="URL de la imagen asociada al contenido">
+    <meta property="og:url" content="https:">
+    <meta name="twitter:title" content="Mascotas Plus | Bienestar para tus mascotas">
+    <meta name="twitter:description" content="Castraciones de Mascotas en Buenos Aires | Mascotas Plus Servicios Veterinarios | Especialistas en Perros y Gatos ¡Contáctanos para programar una cita!">
+    <meta name="twitter:image" content="https://">
+    <meta name="twitter:card" content="tipo de tarjeta (summary, summary_large_image, etc.)">
+     <meta name="theme-color" content="#ff8a00"> 
+    <link rel="icon" href="../img/favicon-logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Raleway:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://kit.fontawesome.com/ebf0b391ae.js" crossorigin="anonymous"></script>
+    <!-- SDK MercadoPago.js -->
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
+    <link rel="stylesheet" href="../style/styles.css" />
+    <title>Mascotas Plus</title>
+  </head>
+  <body>
+    <header>
+      <div class="container-nav">
+        <nav class="navbar">
+          <a href="index.html"
+            ><img src="../img/logo.png" alt="logo" class="brand"
+          /></a>
+          <ul class="nav-links">
+            <li><a href="../page/turnos.html">Turnos</a></li>
+            <li><a href="../page/tarifas.html">Tarifas</a></li>
+            <li><a href="../page/nosotros.html">Nosotros</a></li>           
+            <li><a href="../page/preguntas.html">Preguntas(FAQ)</a></li>
+          </ul>
+        </nav>        
+        <button
+          id="menu-toggle"
+          class="button-menu-toggle"
+          aria-expanded="false"
+          aria-controls="navbar-collapse"
+        >
+          <span class="menu-toggle-icon"></span>
+          <span class="menu-toggle-icon"></span>
+          <span class="menu-toggle-icon"></span>
+        </button>
+      </div>        
+    </header>
+    <main class="full-grid-screen">
+  <form id="form-resumen" class="main-content main-content-center" action="" method="POST">
+        
+      <h2 class="section-title">Confirmación de turno</h2> 
+
+      <table class="resumen-table">
+        <tr>
+            <th colspan="2">Datos del Dueño</th>
+        </tr>
+        <tr>
+            <td>Nombre y Apellidos</td>
+            <td id="nombreApellido"></td>
+        </tr>
+        <tr>
+            <td>Teléfono</td>
+            <td id="telefono"></td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td id="email"></td>
+        </tr>
+        <tr>
+            <td>Dirección particular</td>
+            <td id="direccion"></td>
+        </tr>
+        <tr>
+          <td>Código Postal</td>
+          <td id="codigoPostal"></td>
+      </tr>
+        <tr>
+            <th colspan="2">Datos de la Mascota</th>
+        </tr>
+        <tr>
+          <td>Canino (Cantidad)</td>
+          <td id="caninoCantidad"></td>
+      </tr>
+        <tr>
+            <td>Felino (Cantidad)</td>
+            <td id="felinoCantidad"></td>
+        </tr>       
+        <tr>
+            <td>Peso</td>
+            <td id="peso"></td>
+        </tr>
+        <tr>
+            <td>Edad</td>
+            <td id="edad"></td>
+        </tr>
+        <tr>
+            <td>Localidad</td>
+            <td id="localidad"></td>
+        </tr>
+        <tr>
+            <td>Fecha</td>
+            <td id="fecha"></td>
+        </tr>
+        <tr>
+            <th>¿Mascota gestante o pesa +10kg</th>
+            <td id="preñada"></td>
+        </tr>
+    </table>
+
+    <section class="way-content">
+      <span>
+        <h2 id="costoTotal">ABONAR: 0.00 pesos AR</h2>
+      </span>
+    
+      <h3><strong>Formas en la que efectuará el pago</strong></h3>
+    
+      <article class="way-pay">
+        <div class="inputWayPay">
+        <input type="radio" name="paymentMethod" id="efectivo" value="efectivo" checked>
+        <label for="efectivo" id="way-pay-label-1">Efectivo</label>
+       </div>
+       
+      <div id="checkout-btn" >
+          <div class="inputWayPay">
+            <input type="radio" name="paymentMethod" id="mercado-pago" value="mercado-pago">
+            <label for="mercado-pago" id="way-pay-label-2">Mercado pago</label>
+          </div>         
+
+        <div class="mercado-pago-dflex">
+          <figure>
+          <img src="../img/mercadopago-tarjetas.webp" alt="Pagos por mercado pago débito, crédito, QR" class="mercadopago-tarjetas" >
+        </figure>
+        <div id="wallet_container"></div> 
+        </div>
+      </div>        
+        
+      <div class="inputWayPay">
+        <input type="radio" name="paymentMethod" id="transferencia-bancaria" value="transferencia-bancaria">
+        <label for="transferencia-bancaria" id="way-pay-label-3">Transferencia Digitales</label>    
+      </div>       
+      </article>        
+      <section id="transferencia-bancaria-qr">            
+        <div class="transferencia-bancaria-dflex">
+          <article class="content-mp">
+            <figure>
+              <img src="../img/logo-mercadopago.jpg" alt="Logo de mercado pago" class="logo-mercado-pago">
+            </figure>            
+            <h3>Alias:</h3>
+            <p id="aliasParagraph-MP"> Mascotas-Plus.mp <i class="fas fa-copy" onclick="copyToClipboard('aliasParagraph-MP', 'Alias copiado al portapapeles')"></i></p>
+            <h3>CVU:</h3>
+            <p id="cvuParagraph-MP"> 0000003100081009832203 <i class="fas fa-copy" onclick="copyToClipboard('cvuParagraph-MP', 'CVU copiado al portapapeles')"></i></p>            
+          </article> 
+
+          <article class="content-brubank">
+            <figure>
+            <img src="../img/brubank-logo.webp" alt="Logo banco brubank" class="brubank-logo">
+          </figure>
+            <h3>Alias:</h3>
+            <p id="aliasParagraph"> mascotas-plus <i class="fas fa-copy" onclick="copyToClipboard('aliasParagraph', 'Alias copiado al portapapeles')"></i></p>
+            <h3>CBU:</h3>
+            <p id="cbuParagraph"> 1430001713007652980016 <i class="fas fa-copy" onclick="copyToClipboard('cbuParagraph', 'CBU copiado al portapapeles')"></i></p>
+          </article>          
+        </div>
+      </section>
+      
+
+      <section class="main-modal">
+        <article class="content">
+        
+          <input type="checkbox" id="showModalCheckbox" style="display: none;">
+          <label for="showModalCheckbox" class="label-modal">Mostrar Términos y Condiciones</label>
+        </article>      
+        <!-- Modal -->
+        <input type="checkbox" id="showModal" required>
+        <div class="modal" id="termsModal">
+          <div class="modal-content-Terms">
+            <!-- Contenido del modal -->           
+            <p> <strong>Términos y Condiciones</strong>. </p>                      
+                <p><strong>1. Información</strong></p>
+                <p>1.1. Para una mejor prestación de nuestros servicios, el Cliente se compromete a proporcionar información correcta y precisa de los datos del dueño y la mascota.</p>
+                <p>1.2. Información Médica Veterinaria.</p> 
+                <p>Nos reservamos el derecho de solicitar comprobantes y/o información adicional para corroborar los datos proporcionados por el Cliente sobre su mascota. Igualmente nos reservamos el derecho de cancelar o suspender el turno si encontramos discrepancias o detectar actividades sospechosas en la información proporcionada por un Cliente . Esta decisión no otorgará al Cliente ningún derecho a indemnización o compensación.</p>
+                <p><strong>2. Descripción del Servicio</strong></p>
+                <p>2.1 Ofrecemos servicios de castración y traslado de mascotas, que incluyen:</p>
+                <p>a) Intervención quirúrgica de los animales para garantizar la salud y el bienestar a largo plazo.</p>
+                <p>b) Proporcionamos el transporte de las mascotas, desde la dirección registrada hasta el establecimiento veterinario designado para la cirugía y su posterior regreso.</p>
+                <p>c) Suministro de un día de medicación por profesionales veterinarios durante la cirugía.</p>
+                <p>2.2 La medicación para un día será proporcionada por los profesionales veterinarios durante la cirugía. No se cubre la entrega de analgésicos y antibióticos postoperatorios; estos serán recetados por los profesionales que intervienen, considerando la edad y el peso de la mascota, teniendo el Clientes la opción de adquirirlos en la clínica veterinaria.</p>
+                <p><strong>3. Responsabilidades del Cliente</strong></p>
+                <p>3.1 Información Veraz y Completa. </p> 
+                <p>El Cliente asume la responsabilidad de brindar información precisa y completa en relación a sus datos personales, los de su mascota y su estado de salud, incluyendo cualquier enfermedad preexistente.</p>
+                <p>3.2. Tratamientos de los profesionales.</p>             
+                <p>El Cliente acepta las indicaciones y tratamientos de los profesionales veterinarios y entiende los riesgos y consecuencias de la cirugía.</p>
+                <p>3.3. Compromiso.</p>
+                <p> El Cliente se compromete a cumplir los preparativos y cuidados antes de la intervención quirúrgica, el Cliente debe tomar en cuenta varios aspectos cruciales para la salud de su Mascota. Esto incluye:</p>
+                <p><strong>Ayuno de 12 horas de alimentos y 6 horas de líquidos, vital para el bienestar durante la cirugía. Las mascotas deben estar equipadas con sus accesorios habituales como collares, bozales y correas (para caninos).</strong></p>
+                <p>También deben asegurarse de que <strong>las mascotas hayan hecho sus necesidades una hora antes del retiro programado por las unidades de servicio</strong>. Se recomienda proporcionar mantas para abrigar y brindar confort a las mascotas, tanto para felinos como para caninos. Estos preparativos son esenciales para asegurar el bienestar durante el proceso.</p>
+                <p>3.4. Mascotas preñadas o en celo.</p>
+                <p>En caso de estar la mascota preñada o en celo, el Cliente debe informar con antelación para reprogramar el turno. Si durante la cirugía se detecta que la mascota está preñada, <strong>se notificará al Cliente de inmediato y la intervención no se llevará a cabo. En tal caso, el Cliente será responsable de los costos incurridos.</strong></p>
+                <p>3.5 Condiciones Especiales para Castraciones de Mascotas con Testículos Anormales.</p>            
+                <p> Las castraciones no serán llevadas a cabo en mascotas cuyos testículos se ubiquen en una posición anormal. En tales casos,<strong>se le informará al Cliente y se requerirá realizar estudios complementarios, como ecografías, a su propio costo y cargo, antes de proceder con la intervención quirúrgica.</strong></p>
+                <p>3.6. Edad Máxima para Castraciones.</p>            
+                <p>El servicio de castración se aplica a animales de 6 meses a 6 años de vida. El Cliente asumirá la total responsabilidad en caso de proporcionar información incorrecta</p>
+                <p>3.7 Razas Braquicéfalas.</p>             
+                <p>Para razas de caninos braquicéfalos como el Bulldog Inglés, Boston Terrier, Bulldog Francés, Pekinés, Pug o Carlino, Lhasa Apso, Shar Pei, Shi Tzu, Cavalier King Charles Spaniel, Staffordshire Bull Terrier y Bóxer, se aplicarán costos adicionales. Si se desea castrar a una mascota de estas razas, <strong>el Cliente debe solicitar cotización específica.</strong></p>
+                <p>3.8 Entrega de la Mascota.</p>            
+                <p>Las mascotas serán devueltas en la dirección indicada por el Cliente al momento de contratar el servicio. En caso de que el Cliente se niegue a recibir a su mascota por cualquier motivo, será considerado responsable legalmente por los daños y perjuicios que puedan surgir debido a la custodia del animal. La entidad se reserva el derecho de tomar acciones legales necesarias y puede optar por entregar al animal a refugios de proteccionistas y rescatistas.</p>
+                <p>3.9 Aceptación.</p>            
+                <p>El Cliente acepta plenamente comprender las implicaciones de una intervención quirúrgica en la salud de su mascota, incluyendo los resultados esperados, posibles complicaciones y eventuales secuelas derivadas de la práctica médica. Igualmente acepta los costos médicos veterinarios excepcionales no cubiertos por la castración.</p> 
+                <p><strong>4. Propiedad Intelectual:</strong>  </p>
+                <p>Todos los aspectos tecnológicos, desarrollos, integraciones y la totalidad de la aplicación que conforma los Servicios de Castración y Traslado son propiedad exclusiva de la entidad, abarcando su funcionalidad, códigos, estructura, diseño visual e implementaciones.</p>
+                <p><strong>5. Condiciones generales para la contratación del servicio</strong></p>
+                <p>5.1 Requisitos de contratación.</p>            
+                <p>Solo podrán acceder a solicitar los servicios aquellos individuos mayores de edad.</p>
+                <p>5.2 Modificaciones a las condiciones generales.</p>
+                <p>Podrán realizarse modificaciones en cualquier momento a estas condiciones generales. Los cambios se notificarán a los Clientes mediante la publicación de una versión actualizada en el sitio, junto con la fecha de la última modificación.</p>
+                <p>5.3 Notificaciones.</p>            
+                <p>Se considerarán válidas todas las notificaciones realizadas a los Clientes en relación con nuestros servicios, incluyendo avisos, recordatorios o comunicaciones, enviadas a la dirección de correo electrónico principal o número de contacto según haya sido consignado en el formulario de Solicitud de Turno.</p>
+                <p>5.4 Jurisdicción y Ley Aplicable.</p>            
+                <p>Este acuerdo estará sujeto a las leyes vigentes en Argentina en todos sus aspectos. Cualquier conflicto derivado del acuerdo, su existencia, validez, interpretación, alcance o cumplimiento, será sometido a los tribunales nacionales de jurisdicción comercial.</p>
+            <div class="modal-link-button">
+              <label for="showModalCheckbox" class="btn-all btn-terms btn-terminos" onclick="marcarAcuerdo()">Estoy de Acuerdo</label>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </section>     
+   
+    <div class="btn-form">
+      <a href="../page/turnos.html" class="btn-all btn-atras"><strong>Atrás</strong></a>
+      <input target="_blank" type="submit" value="Finalizar" class=" btn-all btn-fin" >
+    </div>   
+  </form>   
+  </main>
+    
+  <footer class="footer">  
+    <section class="footer-content">           
+      <div class="footer-social">
+        <h5>Contáctanos</h5>
+        </div>
+      <div class="footer-social-link">
+        <a href="https://wa.me/5491122553332" target="_blank"><iconify-icon icon="logos:whatsapp-icon" style="color: #fcfcfc;" width="30" height="30"></iconify-icon></a>
+        <a href="mailto:vetmascotasplus@gmail.com" target="_blank"><iconify-icon icon="heroicons-outline:mail" style="color: #fcfcfc;" width="30" height="30"></iconify-icon></a>
+        <a href="https://wa.me/5491122553332" target="_blank"><iconify-icon icon="ph:phone-bold" style="color: #fcfcfc;" width="30" height="30"></iconify-icon></a>  
+      </div>
+    </section>      
+      <div class="footer-copyright">
+        <p>Todos los derechos reservados &copy; 2023 Mascotas Plus</p>
+      </div>  
+  </footer>
+    <script src="../main_script/script.js"></script>
+    <script src="../main_script/resumen.js"></script>   
+    <script src="../main_script/app.js"></script>
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>       
+  </body>
+</html>
