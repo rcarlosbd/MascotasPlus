@@ -36,9 +36,9 @@ app.post("/create_preference", async (req, res)=> {
            ],
            back_urls: {
                // Corregir las URL para cuando esté actualizado
-               success: "https://rcarlosbd.github.io/cv-web-developer-design/",
-               failure: "https://rcarlosbd.github.io/Mascotas-Plus/resumen.html",
-               pending: "https://rcarlosbd.github.io/ENE-Servicios-Veterinarios/",
+               success: "",
+               failure: "",
+               pending: "",
            },
            auto_return: "approved",
        };

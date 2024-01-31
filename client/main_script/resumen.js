@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const costoTotalElement = document.getElementById('costoTotal');
 
   function calcularImporteTotal() {
-    const costoFelino = 15000;
+    const costoFelino = 15;
     const costoCanino = 18000;
     const importeTotal = felinoCantidad * costoFelino + caninoCantidad * costoCanino;
 
