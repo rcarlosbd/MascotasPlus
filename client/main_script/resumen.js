@@ -76,8 +76,8 @@ document.addEventListener('DOMContentLoaded', function () {
   const costoTotalElement = document.getElementById('costoTotal');
 
   function calcularImporteTotal() {
-    const costoFelino = 15;
-    const costoCanino = 18000;
+    const costoFelino = 1;
+    const costoCanino = 1;
     const importeTotal = felinoCantidad * costoFelino + caninoCantidad * costoCanino;
 
     const importeFormateado = importeTotal.toLocaleString('es-AR', {
