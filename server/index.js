@@ -36,9 +36,9 @@ app.post("/create_preference", async (req, res)=> {
            ],
            back_urls: {
                // Corregir las URL para cuando esté actualizado
-               success: " ",
-               failure: " ",
-               pending: " ",
+               success: "",
+               failure: "",
+               pending: "",
            },
            auto_return: "approved",
        };
