@@ -11,7 +11,7 @@ const client = new MercadoPagoConfig({ accessToken: "APP_USR-8589750939107695-01
 // Actualizar en relación al puerto para que cargue en un servidor real ********
 
 const app = express();
-// const port =3000;
+const port =3000;
 
 
 app.use(cors());
