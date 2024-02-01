@@ -182,26 +182,6 @@ function validateForm() {
     return false;
   }
 
-
-
-
-  // ****** Añadiendo el envio del formulario por el método post
-
-  // Añadir un campo oculto para indicar el método POST
-  const methodInput = document.createElement('input');
-  methodInput.type = 'hidden';
-  methodInput.name = '_method';
-  methodInput.value = 'POST';
-  this.appendChild(methodInput);
-
-
-
-
-
-
-
-
-
   // Otras validaciones...
 
   return true;
