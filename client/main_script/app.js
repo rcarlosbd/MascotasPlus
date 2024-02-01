@@ -15,7 +15,10 @@ document.getElementById("checkout-btn").addEventListener("click", async () => {
       price: window.importeTotal 
     };
 
-    const response = await fetch("http://localhost:3000/create_preference", {
+    // http://localhost:3000/create_preference
+    // https://rcarlosbd.github.io/MascotasPlus/client/page/resumen.html/create_preference
+
+    const response = await fetch("https://rcarlosbd.github.io/MascotasPlus/client/page/resumen.html/create_preference", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
