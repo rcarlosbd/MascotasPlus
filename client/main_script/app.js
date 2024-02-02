@@ -14,8 +14,9 @@ document.getElementById("checkout-btn").addEventListener("click", async () => {
       quantity: 1,
       price: window.importeTotal 
     };
-
-    const response = await fetch("http://localhost:3000/create_preference", {
+    // http://localhost:3000/create_preference
+   
+    const response = await fetch(" https://65bd00ad28707f9481e88530--delicate-creponne-6fe1fe.netlify.app/create_preference", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
