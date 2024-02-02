@@ -3,17 +3,6 @@
 import express from "express";
 import cors from "cors";
 
-const corsOptions = {
-  origin: "*",
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  credentials: true,
-  optionsSuccessStatus: 204,
-};
-
-app.use(cors(corsOptions));
-
-
-
 // SDK de Mercado Pago
 import { MercadoPagoConfig, Preference } from 'mercadopago';
 
@@ -26,6 +15,15 @@ const client = new MercadoPagoConfig({ accessToken: "APP_USR-8589750939107695-01
 const app = express();
 
 const port = process.env.PORT || 3000;
+
+const corsOptions = {
+    origin: "*",
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    credentials: true,
+    optionsSuccessStatus: 204,
+  };
+  
+  app.use(cors(corsOptions));
 
 
 app.use(cors());
