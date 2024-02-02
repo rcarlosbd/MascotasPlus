@@ -6,6 +6,7 @@ import cors from "cors";
 
 // SDK de Mercado Pago
 import { MercadoPagoConfig, Preference } from 'mercadopago';
+
 // Agrega credenciales
 const client = new MercadoPagoConfig({ accessToken: "APP_USR-8589750939107695-010908-1aed014ce26e3ebb2681bfd5a11fd255-310170092"});
 
@@ -13,7 +14,8 @@ const client = new MercadoPagoConfig({ accessToken: "APP_USR-8589750939107695-01
 // Actualizar en relación al puerto para que cargue en un servidor real ********
 
 const app = express();
-const port =3000;
+
+const port = process.env.PORT || 3000;
 
 
 app.use(cors());
@@ -60,15 +62,26 @@ app.post("/create_preference", async (req, res)=> {
 });
 
 
-app.listen(port, ()=> {
-   console.log("El servidor está corriendo exitosamente")
-})
+// app.listen(port, ()=> {
+//    console.log("El servidor está corriendo exitosamente")
+// })
+
+
+// Exportar la aplicación para que Netlify pueda manejarla
+export { app };
 
 
 
 
 
+//******** */ Estos son los cambios realizados:
 
+// Manejar el Puerto Dinámico:
 
+// Se usa process.env.PORT para obtener el puerto proporcionado por Netlify o el puerto 3000 como predeterminado cuando estás desarrollando localmente.
+// Eliminación de app.listen:
 
+// En Netlify, no necesitas usar app.listen ya que Netlify gestionará el servidor por ti.
+// Exportar la Aplicación:
 
+// Al final, se exporta la aplicación para que Netlify pueda detectarla y manejarla adecuadamente.
