@@ -16,23 +16,14 @@ document.getElementById("checkout-btn").addEventListener("click", async () => {
     };
     // http://localhost:3000/create_preference
     // https://mascotasplus.netlify.app
-
-    const response = await fetch("https://65bd00ad28707f9481e88530--delicate-creponne-6fe1fe.netlify.app/create_preference", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json",
-  },
-  body: JSON.stringify(orderData),
-});
-
    
-    // const response = await fetch("https://mascotasplus.netlify.app/create_preference", {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify(orderData),
-    // });
+    const response = await fetch("https://mascotasplus.netlify.app/create_preference", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(orderData),
+    });
 
     const preference = await response.json();
 
