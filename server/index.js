@@ -40,7 +40,7 @@ app.post("/create_preference", async (req, res)=> {
            ],
            back_urls: {
                // Corregir las URL para cuando esté actualizado
-               success: "https://rcarlosbd.github.io/MascotasPlus/client/page/resumen.html",
+               success: "https://mascotasplus.netlify.app",
                failure: "",
                pending: "",
            },
