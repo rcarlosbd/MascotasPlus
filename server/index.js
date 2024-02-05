@@ -23,7 +23,6 @@ const whitelist = [
 "https://mascotasplus.netlify.app",
 "https://main--mascotasplus.netlify.app",
 "https://rcarlosbd.github.io"
-
 ]
 
 const corsOptions = {
