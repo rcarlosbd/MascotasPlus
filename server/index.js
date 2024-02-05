@@ -15,10 +15,11 @@ const client = new MercadoPagoConfig({ accessToken: "APP_USR-8589750939107695-01
 const app = express();
 
 // const port = process.env.PORT || 3000;
-const port = 8080;
+const port = 3001;
 
 const whitelist = [
-"http://localhost:3000",
+"http://localhost:3001",
+"http://127.0.0.1:5500",
 "https://mascotasplus.netlify.app",
 "https://main--mascotasplus.netlify.app",
 "https://rcarlosbd.github.io/MascotasPlus/"
