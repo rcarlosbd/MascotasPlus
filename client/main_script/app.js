@@ -16,8 +16,9 @@ document.getElementById("checkout-btn").addEventListener("click", async () => {
     };
     // http://localhost:3000/create_preference
     // https://mascotasplus.netlify.app
+    // https://main--mascotasplus.netlify.app/create_preference
    
-    const response = await fetch("https://mascotasplus.netlify.app/create_preference", {
+    const response = await fetch("https://main--mascotasplus.netlify.app/create_preference", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
