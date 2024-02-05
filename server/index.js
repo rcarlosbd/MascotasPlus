@@ -22,7 +22,7 @@ const whitelist = [
 "http://127.0.0.1:5500",
 "https://mascotasplus.netlify.app",
 "https://main--mascotasplus.netlify.app",
-"https://rcarlosbd.github.io/MascotasPlus/"
+"https://rcarlosbd.github.io"
 
 ]
 
