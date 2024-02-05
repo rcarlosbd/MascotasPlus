@@ -24,8 +24,13 @@ const corsOptions = {
     optionsSuccessStatus: 204,
 };
 
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', 'https://main--mascotasplus.netlify.app'); // Or '*' for all origins
+    next();
+});
+
   
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
 
 
 app.use(cors());
