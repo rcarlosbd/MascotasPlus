@@ -19,11 +19,10 @@ const port = 3001;
 
 const whitelist = [
 "http://localhost:3001",
+"https://rcarlosbd.github.io",
 "http://127.0.0.1:5500",
 "https://mascotasplus.netlify.app",
-"https://main--mascotasplus.netlify.app",
-"https://rcarlosbd.github.io"
-
+"https://main--mascotasplus.netlify.app"
 ]
 
 const corsOptions = {
