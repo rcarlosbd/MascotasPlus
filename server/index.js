@@ -15,19 +15,19 @@ const client = new MercadoPagoConfig({ accessToken: "APP_USR-8589750939107695-01
 const app = express();
 
 // const port = process.env.PORT || 3000;
-const port = 3000;
+const port = 8000;
 
-const corsOptions = {
-    origin: "https://main--mascotasplus.netlify.app",
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-    credentials: true,
-    optionsSuccessStatus: 204,
-};
+// const corsOptions = {
+//     origin: "https://main--mascotasplus.netlify.app",
+//     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+//     credentials: true,
+//     optionsSuccessStatus: 204,
+// };
 
-app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', 'https://main--mascotasplus.netlify.app'); // Or '*' for all origins
-    next();
-});
+// app.use((req, res, next) => {
+//     res.setHeader('Access-Control-Allow-Origin', 'https://main--mascotasplus.netlify.app'); // Or '*' for all origins
+//     next();
+// });
 
   
 // app.use(cors(corsOptions));
@@ -38,7 +38,7 @@ app.use(express.json());
 
 
 app.get("/", (req,res)=> {
-   res.send("Servidor Activo :)");
+   res.send("Soy el server :)");
 });
 
 
@@ -64,9 +64,8 @@ app.post("/create_preference", async (req, res)=> {
            auto_return: "approved",
        };
 
-
        const preference = new Preference(client);
-       const result = await preference.create({body});
+       const result = await preference.create({ body });
        res.json({
            id:result.id,
        });
@@ -80,25 +79,8 @@ app.post("/create_preference", async (req, res)=> {
 
 
 app.listen(port, ()=> {
-   console.log("El servidor está corriendo exitosamente")
+   console.log(`El servidor está corriendo exitosamente en ${port}`)
 })
-
 
 // Exportar la aplicación para que Netlify pueda manejarla
 export { app };
-
-
-
-
-
-//******** */ Estos son los cambios realizados:
-
-// Manejar el Puerto Dinámico:
-
-// Se usa process.env.PORT para obtener el puerto proporcionado por Netlify o el puerto 3000 como predeterminado cuando estás desarrollando localmente.
-// Eliminación de app.listen:
-
-// En Netlify, no necesitas usar app.listen ya que Netlify gestionará el servidor por ti.
-// Exportar la Aplicación:
-
-// Al final, se exporta la aplicación para que Netlify pueda detectarla y manejarla adecuadamente.
