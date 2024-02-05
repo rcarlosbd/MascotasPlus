@@ -17,23 +17,18 @@ const app = express();
 // const port = process.env.PORT || 3000;
 const port = 8000;
 
-// const corsOptions = {
-//     origin: "https://main--mascotasplus.netlify.app",
-//     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-//     credentials: true,
-//     optionsSuccessStatus: 204,
-// };
+const corsOptions = {
+    origin: "*", // Permitir cualquier origen
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+    credentials: true,
+    optionsSuccessStatus: 204,
+};
 
-// app.use((req, res, next) => {
-//     res.setHeader('Access-Control-Allow-Origin', 'https://main--mascotasplus.netlify.app'); // Or '*' for all origins
-//     next();
-// });
-
-  
-// app.use(cors(corsOptions));
+app.use(cors(corsOptions));
 
 
-app.use(cors());
+
+// app.use(cors());
 app.use(express.json());
 
 
