@@ -18,13 +18,14 @@ const app = express();
 const port = 3000;
 
 const corsOptions = {
-    origin: "*",
+    origin: "https://main--mascotasplus.netlify.app",
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true,
     optionsSuccessStatus: 204,
-  };
+};
+
   
-  app.use(cors(corsOptions));
+app.use(cors(corsOptions));
 
 
 app.use(cors());

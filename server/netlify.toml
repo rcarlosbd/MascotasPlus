@@ -7,3 +7,9 @@ command = "npm start"
     Access-Control-Allow-Origin = "*"
     Access-Control-Allow-Headers = "Content-Type"
     Access-Control-Allow-Methods = "GET, POST, OPTIONS"
+
+[[redirects]]
+  from = "/create_preference"
+  to = "https://mascotasplus.netlify.app/create_preference"
+  status = 200
+  force = true
