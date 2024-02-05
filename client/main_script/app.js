@@ -18,7 +18,7 @@ document.getElementById("checkout-btn").addEventListener("click", async () => {
     // https://mascotasplus.netlify.app
     // https://main--mascotasplus.netlify.app/create_preference
    
-    const response = await fetch("https://mascotasplus.netlify.app/create_preference", {
+    const response = await fetch("http://localhost:3000/create_preference", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
