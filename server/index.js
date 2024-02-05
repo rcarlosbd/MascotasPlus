@@ -17,12 +17,30 @@ const app = express();
 // const port = process.env.PORT || 3000;
 const port = 8000;
 
+const whitelist = [
+"http://localhost:3000",
+"https://mascotasplus.netlify.app",
+"https://main--mascotasplus.netlify.app",
+"https://rcarlosbd.github.io/MascotasPlus/"
+
+]
+
 const corsOptions = {
-    origin: "*", // Permitir cualquier origen
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-    credentials: true,
-    optionsSuccessStatus: 204,
+    origin: function (origin, callback) {
+        console.log("Solicitud de origen:", origin);
+        if (whitelist.indexOf(origin) !== -1 || !origin) {
+            console.log("Solicitud permitida por CORS");
+            callback(null, true);
+        } else {
+            console.log("Solicitud bloqueada por CORS");
+            callback(new Error("Not allowed by CORS"));
+        }
+    },
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",  // Agrega OPTIONS si es necesario
 };
+
+app.options("*", cors(corsOptions));
+
 
 app.use(cors(corsOptions));
 
