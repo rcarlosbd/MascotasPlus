@@ -213,7 +213,7 @@ resetearPagina();
 // Función para resetear la página después de 1 minuto
 function resetearPagina() {
   setTimeout(() => {
-    window.location.href = 'index.html'; // Cambia 'index.html' con la URL de tu página de inicio
+    window.location.href = 'https://mascotasplus.netlify.app'; // Cambia 'index.html' con la URL de tu página de inicio
   }, 60000); // 60000 milisegundos equivalen a 1 minuto
 }
 
