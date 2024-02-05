@@ -14,7 +14,8 @@ const client = new MercadoPagoConfig({ accessToken: "APP_USR-8589750939107695-01
 
 const app = express();
 
-const port = process.env.PORT || 3000;
+// const port = process.env.PORT || 3000;
+const port = 3000;
 
 const corsOptions = {
     origin: "*",
@@ -36,6 +37,8 @@ app.get("/", (req,res)=> {
 
 
 app.post("/create_preference", async (req, res)=> {
+    console.log("Solicitud recibida en /create_preference");
+    console.log("Cuerpo de la solicitud:", req.body);
    try{
        const body = {
            items: [
@@ -70,9 +73,9 @@ app.post("/create_preference", async (req, res)=> {
 });
 
 
-// app.listen(port, ()=> {
-//    console.log("El servidor está corriendo exitosamente")
-// })
+app.listen(port, ()=> {
+   console.log("El servidor está corriendo exitosamente")
+})
 
 
 // Exportar la aplicación para que Netlify pueda manejarla
