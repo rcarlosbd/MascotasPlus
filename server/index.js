@@ -15,7 +15,7 @@ const client = new MercadoPagoConfig({ accessToken: "APP_USR-8589750939107695-01
 const app = express();
 
 // const port = process.env.PORT || 3000;
-const port = 8000;
+const port = 8080;
 
 const whitelist = [
 "http://localhost:3000",
