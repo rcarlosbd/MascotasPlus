@@ -14,35 +14,25 @@ const client = new MercadoPagoConfig({ accessToken: "APP_USR-8589750939107695-01
 
 const app = express();
 
-// const port = process.env.PORT || 3000;
-const port = 3001;
+const port = process.env.PORT || 3000;
+// const port = "https://mascotasplus.netlify.app/create_preference";
 
 const whitelist = [
-"http://localhost:3001",
-"https://rcarlosbd.github.io",
-"http://127.0.0.1:5500",
-"https://mascotasplus.netlify.app",
-"https://main--mascotasplus.netlify.app"
+"http://localhost:3001/create_preference",
+"https://rcarlosbd.github.io/create_preference",
+"http://127.0.0.1:5500/create_preference",
+"https://mascotasplus.netlify.app/create_preference",
+"https://main--mascotasplus.netlify.app/create_preference"
 ]
 
 const corsOptions = {
-    origin: function (origin, callback) {
-        console.log("Solicitud de origen:", origin);
-        if (whitelist.indexOf(origin) !== -1 || !origin) {
-            console.log("Solicitud permitida por CORS");
-            callback(null, true);
-        } else {
-            console.log("Solicitud bloqueada por CORS");
-            callback(new Error("Not allowed by CORS"));
-        }
-    },
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",  // Agrega OPTIONS si es necesario
-};
-
+    origin: whitelist,
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS",
+  };
+  
+app.use(cors(corsOptions));
 app.options("*", cors(corsOptions));
 
-
-app.use(cors(corsOptions));
 
 
 
